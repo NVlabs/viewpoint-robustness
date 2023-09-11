@@ -234,7 +234,7 @@ figure {
             <div class="col-5 text-center"><a href="https://www.jsjoo.com/">Jungseock Joo</a><sup>2,5</sup></div>
             <div class="col-5 text-center"><a href="https://www.media.mit.edu/people/raskar/overview/">Ramesh Raskar</a><sup>1</sup></div>
             <div class="col-5 text-center"><a href="https://www.cs.utoronto.ca/~fidler/">Sanja Fidler</a><sup>2,3,4</sup></div>
-            <div class="col-5 text-center"><a href="https://alvarezlopezjosem.github.io/">Jose Alvarez</a><sup>2</sup></div>
+            <div class="col-5 text-center"><a href="https://alvarezlopezjosem.github.io/">Jose M. Alvarez</a><sup>2</sup></div>
 		</div>
         <div class="author-row">
             
@@ -247,7 +247,7 @@ figure {
         </div>
 
 		<div class="affil-row">
-			<div class="venue text-center"><b><a href="https://iccv2023.thecvf.com/">ICCV 2023</a></b></div>
+			<div class="venue text-center"><b><a href="https://iccv2023.thecvf.com/">International Conference on Computer Vision, 2023</a></b></div>
 		</div>
 
 		<div style="clear: both">
@@ -256,21 +256,32 @@ figure {
 					<span class="material-icons"> description </span>
 					Paper
 				</a>
+				<a class="paper-btn" href="https://drive.google.com/drive/folders/1FQGl9oHyMb7CspUBSFQvpByZD9myLync?usp=sharing">
+					<span class="material-icons"> description </span>
+					Data
+				</a>
+				<a class="paper-btn" href="https://github.com/NVlabs/viewpoint-robustness">
+					<span class="material-icons"> description </span>
+					Dataset Code (coming soon!)
+				</a>
 				<a class="paper-btn" href="">
 					<span class="material-icons"> description </span>
 					Video (coming soon!)
 				</a>
-				<a class="paper-btn" href="https://github.com/NVlabs/viewpoint-robustness">
-					<span class="material-icons"> description </span>
-					Code (coming soon!)
-				</a>
-				<a class="paper-btn" href="https://github.com/NVlabs/viewpoint-robustness">
-					<span class="material-icons"> description </span>
-					Data (coming soon!)
-				</a>
 			</div>
 		</div>
 	</div>
+
+    <section id="teaser">
+            <figure style="width: 100%;">
+                <a href="assets/viewpoint_problem.png">
+                    <img width="100%" src="assets/viewpoint_problem.png">
+                </a>
+                <p class="caption" style="margin-bottom: 1px;  text-align: justify">
+                   We find that the performance of state-of-the-art methods for bird’s eye view (BEV) segmentation quickly drop with small changes to viewpoint at inference. Above we see predictions from <a href="https://github.com/bradyz/cross_view_transformers">Cross View Transformers</a> trained on data from a source rig (top). The target rig pitch is reduced by 10° (bottom), leading a 17% drop in IoU. To eliminate the viewpoint robustness problem, we propose a new method for novel view synthesis and use it to transform collected data from the source to target rig automatically.
+                </p>
+            </figure>
+    </section>
 
 	<section id="abstract"/>
 		<h2>Abstract</h2>
@@ -291,11 +302,59 @@ figure {
 				<p><b>Towards Viewpoint Robustness in Bird's Eye View Segmentation</b></p>
 				<p>Tzofi Klinghoffer, Jonah Philion, Wenzheng Chen, Or Litany, Zan Gojcic, Jungseock Joo, Ramesh Raskar, Sanja Fidler, Jose Alvarez</p>
 
-				<div><span class="material-icons"> description </span><a href="assets/tzofi2023view.pdf"> Paper preprint (PDF, 17.7 MB)</a></div>
+				<div><span class="material-icons"> description </span><a href="assets/tzofi2023view.pdf"> Paper preprint (PDF, 8.3 MB)</a></div>
 				<div><span class="material-icons"> description </span><a href=""> arXiv version</a></div>
 				<div><span class="material-icons"> insert_comment </span><a href="assets/tzofi2023view.bib"> BibTeX</a></div>
 			</div>
 		</div>
+	</section>
+
+	<section id="problem"/>
+		<h2>The Viewpoint Robustness Problem</h2>
+		<hr>
+            <figure style="width: 100%;">
+                <a href="assets/problem.png">
+                    <img width="100%" src="assets/problem.png">
+                </a>
+                <p class="caption" style="margin-bottom: 1px;  text-align: justify">
+                   We train a source BEV model using <a href="https://nv-tlabs.github.io/lift-splat-shoot/">Lift Splat Shoot</a> and <a href="https://github.com/bradyz/cross_view_transformers">Cross View Transformers</a>, denoted at point 0 on the x axis of each graph. We then test the model across different target rigs where the camera pitch, yaw, height, or pitch and height are changed, as denoted by the different points along the x axes. We also trained each model on the target rig directly and refer to this model as the ”oracle”, as it reflects the expected upper bound IoU for each viewpoint.
+                </p>
+            </figure>
+		<p>
+            To quantify the impact of training a perception model on data from one camera viewpoint (the source rig) and testing on another camera viewpoint (the target rig), we run extensive experiments in simulation. We train on data from a source rig and then vary either the pitch, yaw, height, or pitch and height together. We find that even small changes in camera viewpoint lead to significant drops in perception model accuracy.
+		</p>
+	</section>
+
+	<section id="method"/>
+		<h2>Method</h2>
+		<hr>
+            <figure style="width: 100%;">
+                <a href="assets/method.png">
+                    <img width="100%" src="assets/method.png">
+                </a>
+                <p class="caption" style="margin-bottom: 1px;  text-align: justify">
+                   Current methods for bird’s eye view (BEV) segmentation are trained on data captured from one set of camera rigs (the source rig). At inference time, these models perform well on that camera rig, but, according to our analysis, even small changes in camera viewpoint lead to large drops in BEV segmentation accuracy. Our solution is to use novel view synthesis to augment the training dataset. We find this simple solution drastically improves the robustness of BEV segmentation models to data from a target camera rig, even when no real data from the target rig is available during training.
+                </p>
+            </figure>
+		<p>
+            We propose a method for novel view synthesis for complex autonomous vehicle (AV) scenes. Our approach builds off of Worldsheet <a href="https://worldsheet.github.io/">Worldsheet</a>, a recent method for novel view synthesis, that uses monocular depth estimation to transform the scene into a textured mesh, which can be used to render novel views. We use LiDAR data to supervise depth estimation, automasking to improve the quality of the LiDAR depth maps, SSIM loss to improve training robustness, and apply only the  minimal loss between neighboring frames to improve performance on scenes with occlusions. More ablations are included in the paper.
+		</p>
+	</section>
+
+	<section id="results"/>
+		<h2>Results</h2>
+		<hr>
+            <figure style="width: 100%;">
+                <a href="assets/results.png">
+                    <img width="100%" src="assets/results.png">
+                </a>
+                <p class="caption" style="margin-bottom: 1px;  text-align: justify">
+                   Shown above are the novel view synthesis results (rectified) obtained with our method for novel view synthesis. We transform images from the source rig to each of the target viewpoints and then use them for BEV segmentation training.
+                </p>
+            </figure>
+		<p>
+            We find that our method is able to produce realistic changes in camera viewpoint from monocular images. We then use these images to re-train the BEV segmentation model for the target viewpoint. As a result, BEV segmentation accuracy (IoU) significantly increases, removing the viewpoint domain gap.
+		</p>
 	</section>
 
 	<section id="bibtex">
@@ -317,7 +376,7 @@ figure {
 		<hr>
 		<div class="row">
 			<p>
-			We would like to thank <a href="https://scholar.harvard.edu/adegirmenci/home">Alperen Degirmenci</a> for invaluable help in data preparation and <a href="https://mayings.github.io/">Maying Shen</a> for her time.
+            We thank <a href="https://scholar.harvard.edu/adegirmenci/home">Alperen Degirmenci</a> for his valuable help with AV data preparation and <a href="https://mayings.github.io/">Maying Shen</a> for her valuable support with experiments.
 			</p>
 		</div>
 	</section>
