@@ -204,6 +204,51 @@ figure {
 .venue {
 	color: #1367a7;
 }
+#wrapper { 
+    width: 920px; 
+    height: auto; 
+    margin: 0 auto;
+} 
+#home1 { 
+    width: 30%; 
+    height: 200px; 
+    float: left; 
+    margin-right: 5%;
+} 
+
+#home2 { 
+    width: 30%; 
+    height: 200px; 
+    float: left; 
+    margin-right: 5%;
+}
+#home3 { 
+    width: 30%; 
+    height: 200px; 
+    float: left; 
+}
+
+@media (max-width:767px) {
+    #wrapper{
+        width: 100%;
+        height: auto;
+    }
+    #home1 {
+        width: 100%;
+        height: auto;
+        float: none;
+    }
+    #home2 {
+        width: 100%;
+        height: auto;
+        float: none;
+    }
+    #home3 {
+        width: 100%;
+        height: auto;
+        float: none;
+    }
+}
 </style>
 <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,600,400italic,600italic,300,300italic' rel='stylesheet' type='text/css'>
 <head>
@@ -264,9 +309,9 @@ figure {
 					<span class="material-icons"> description </span>
 					Dataset Code (coming soon!)
 				</a>
-				<a class="paper-btn" href="">
+				<a class="paper-btn" href="https://youtu.be/CuJ9gfJpfhc">
 					<span class="material-icons"> description </span>
-					Video (coming soon!)
+					Video
 				</a>
 			</div>
 		</div>
@@ -282,6 +327,19 @@ figure {
                 </p>
             </figure>
     </section>
+
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <h2>
+                Technical Video
+            </h2>
+            <div class="text-center">
+                <div style="position:relative;padding-top:56.25%;">
+                    <iframe src="https://www.youtube.com/embed/CuJ9gfJpfhc?si=2Ej-M8EhWxNOSNwO" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
 
 	<section id="abstract"/>
 		<h2>Abstract</h2>
@@ -353,8 +411,24 @@ figure {
                 </p>
             </figure>
 		<p>
-            We find that our method is able to produce realistic changes in camera viewpoint from monocular images. We then use these images to re-train the BEV segmentation model for the target viewpoint. As a result, BEV segmentation accuracy (IoU) significantly increases, removing the viewpoint domain gap.
+            We find that our method is able to produce realistic changes in camera viewpoint from monocular images. We then use these images to re-train the BEV segmentation model for the target viewpoint. As a result, BEV segmentation accuracy (IoU) significantly increases, removing the viewpoint domain gap. The improvement in performance achieved with our method is highlighted in the videos before. Without our method, we see that the BEV segmentation model is unable to generalize to a different viewpoint (middle), whereas, with our method, it is able to perform well on the target viewpoint (right).
 		</p>
+        <br>
+        <div id="wrapper">
+            <video id="home1" width="200" height="200" controls="controls" controls muted loop autoplay>
+                <source type="video/mp4" src="assets/sedan_to_sedan_trim.mp4" />
+            </video>
+            <video id="home2" width="200" height="200" controls="controls" controls muted loop autoplay>
+                <source type="video/mp4" src="assets/sedan_to_suv_trim.mp4" />
+            </video>
+            <video id="home3" width="200" height="200" controls="controls" controls muted loop autoplay>
+                <source type="video/mp4" src="assets/sedan_to_suv_our_method_trim.mp4" />
+            </video>
+            <p class="caption" style="margin-bottom: 1px;  text-align: center">
+                (Left) Performance of model trained and tested on sedan viewpoint, (Middle) Performance of model trained on sedan and tested on SUV viewpoint, (Right) Performance of model trained on trained on sedan transformed to SUV with our approach and tested on SUV.
+            </p>
+        </div>
+
 	</section>
 
 	<section id="bibtex">
