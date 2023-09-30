@@ -1,6 +1,6 @@
 # Towards Viewpoint Robustness for Bird's Eye View Segmentation 
 
-More coming soon!
+Datasets from CARLA and NVIDIA DRIVE Sim are provided [here](https://drive.google.com/drive/folders/1FQGl9oHyMb7CspUBSFQvpByZD9myLync) for future work in quantifying viewpoint robustness. Corresponding code for preprocessing and loading these datasets will be provided in this repo by the end of __October 2023__. Stay tuned!
 
 > __Towards Viewpoint Robustness in Bird's Eye View Segmentation__  
 > [Tzofi Klinghoffer](https://tzofi.github.io/), [Jonah Philion](https://www.cs.toronto.edu/~jphilion/), [Wenzheng Chen](https://www.cs.toronto.edu/~wenzheng/), [Or Litany](https://orlitany.github.io/), [Zan Gojcic](https://zgojcic.github.io/), [Jungseock Joo](https://www.jsjoo.com/), [Ramesh Raskar](https://www.media.mit.edu/people/raskar/overview/), [Sanja Fidler](https://www.cs.utoronto.ca/~fidler/), [Jose M. Alvarez](https://alvarezlopezjosem.github.io/)  
