@@ -1,0 +1,9 @@
+opencv-python==4.5.5.64
+torch==1.11.0
+torchvision==0.12.0
+pyquaternion==0.9.9
+torchmetrics==0.7.2
+efficientnet-pytorch==0.7.1
+nuscenes-devkit
+tensorboardX
+Pillow
