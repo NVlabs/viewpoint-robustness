@@ -9,6 +9,9 @@ Datasets from CARLA and NVIDIA DRIVE Sim are provided [here](https://drive.googl
 
 For business inquiries, please submit the [NVIDIA research licensing form](https://www.nvidia.com/en-us/research/inquiries/).
 
+## Preparation
+```pip install -r requirements.txt```
+
 ## Usage
 
 We provide two datasets, one rendered in CARLA, which includes train and test subsets across 36 different viewpoints, and one rendered in DRIVE Sim, which includes test subsets across 11 viewpoints.
