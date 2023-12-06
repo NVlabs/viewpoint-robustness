@@ -56,6 +56,8 @@ Dataset idx refers to which test dataset to load, and corresponds to:
 10: +5 degrees pitch (looking upwards)
 11: +10 degrees pitch (looking upwards)
 
+The above visualization step visualizes the unrectified images. The codebase also includes a function for visualizing rectified images to verify the data prior to training.
+
 ## Thanks
 
 Many thanks to [Alperen Degirmenci](https://scholar.harvard.edu/adegirmenci/home) and [Maying Shen](https://mayings.github.io/). 
