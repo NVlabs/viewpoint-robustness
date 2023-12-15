@@ -317,25 +317,12 @@ figure {
 		</div>
 	</div>
 
-    <section id="teaser">
-            <figure style="width: 100%;">
-                <a href="assets/viewpoint_problem.png">
-                    <img width="100%" src="assets/viewpoint_problem.png">
-                </a>
-                <p class="caption" style="margin-bottom: 1px;  text-align: justify">
-                   We find that the performance of state-of-the-art methods for bird’s eye view (BEV) segmentation quickly drop with small changes to viewpoint at inference. Above we see predictions from <a href="https://github.com/bradyz/cross_view_transformers">Cross View Transformers</a> trained on data from a source rig (top). The target rig pitch is reduced by 10° (bottom), leading a 17% drop in IoU. To eliminate the viewpoint robustness problem, we propose a new method for novel view synthesis and use it to transform collected data from the source to target rig automatically.
-                </p>
-            </figure>
-    </section>
 
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            <h2>
-                Technical Video
-            </h2>
             <div class="text-center">
                 <div style="position:relative;padding-top:56.25%;">
-                    <iframe src="https://www.youtube.com/embed/CuJ9gfJpfhc?si=2Ej-M8EhWxNOSNwO" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+                    <iframe src="https://www.youtube.com/embed/SVt1UTtxbSY?si=TTSwzpnN6MVdQvPT" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
                 </div>
             </div>
         </div>
@@ -348,6 +335,17 @@ figure {
             Autonomous vehicles (AV) require that neural networks used for perception be robust to different viewpoints if they are to be deployed across many types of vehicles without the repeated cost of data collection and labeling for each. AV companies typically focus on collecting data from diverse scenarios and locations, but not camera rig configurations, due to cost. As a result, only a small number of rig variations exist across most fleets. In this paper, we study how AV perception models are affected by changes in camera viewpoint and propose a way to scale them across vehicle types without repeated data collection and labeling. Using bird's eye view (BEV) segmentation as a motivating task, we find through extensive experiments that existing perception models are surprisingly sensitive to changes in camera viewpoint. When trained with data from one camera rig, small changes to pitch, yaw, depth, or height of the camera at inference time lead to large drops in performance. We introduce a technique for novel view synthesis and use it to transform collected data to the viewpoint of target rigs, allowing us to train BEV segmentation models for diverse target rigs without any additional data collection or labeling cost. To analyze the impact of viewpoint changes, we leverage synthetic data to mitigate other gaps (content, ISP, etc). Our approach is then trained on real data and evaluated on synthetic data, enabling evaluation on diverse target rigs. We release all data for use in future work. Our method is able to recover an average of 14.7% of the IoU that is otherwise lost when deploying to new rigs.
 		</p>
 	</section>
+
+    <section id="teaser">
+            <figure style="width: 100%;">
+                <a href="assets/viewpoint_problem.png">
+                    <img width="100%" src="assets/viewpoint_problem.png">
+                </a>
+                <p class="caption" style="margin-bottom: 1px;  text-align: justify">
+                   We find that the performance of state-of-the-art methods for bird’s eye view (BEV) segmentation quickly drop with small changes to viewpoint at inference. Above we see predictions from <a href="https://github.com/bradyz/cross_view_transformers">Cross View Transformers</a> trained on data from a source rig (top). The target rig pitch is reduced by 10° (bottom), leading a 17% drop in IoU. To eliminate the viewpoint robustness problem, we propose a new method for novel view synthesis and use it to transform collected data from the source to target rig automatically.
+                </p>
+            </figure>
+    </section>
 
 	<section id="paper">
 		<h2>Paper</h2>
@@ -366,6 +364,19 @@ figure {
 			</div>
 		</div>
 	</section>
+
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <h2>
+                Technical Video
+            </h2>
+            <div class="text-center">
+                <div style="position:relative;padding-top:56.25%;">
+                    <iframe src="https://www.youtube.com/embed/CuJ9gfJpfhc?si=2Ej-M8EhWxNOSNwO" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
 
 	<section id="problem"/>
 		<h2>The Viewpoint Robustness Problem</h2>
