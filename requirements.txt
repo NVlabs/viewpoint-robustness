@@ -7,3 +7,4 @@ efficientnet-pytorch==0.7.1
 nuscenes-devkit
 tensorboardX
 Pillow
+protobuf==3.20.1
