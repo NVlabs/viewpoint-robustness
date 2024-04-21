@@ -61,6 +61,10 @@ Dataset idx refers to which test dataset to load, and corresponds to:
 
 The above visualization step visualizes the unrectified images. The codebase also includes a function for visualizing rectified images to verify the data prior to training.
 
+## Rendering CARLA Data
+
+The code that we use to render the CARLA datasets are provided in [this git issue](https://github.com/NVlabs/viewpoint-robustness/issues/4). While we only rendered RGB images and corresponding 3D bounding box labels in our datasets, depth, segmentation, and other data can also be rendered.
+
 ## Thanks
 
 Many thanks to [Alperen Degirmenci](https://scholar.harvard.edu/adegirmenci/home) and [Maying Shen](https://mayings.github.io/). 
